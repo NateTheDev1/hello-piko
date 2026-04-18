@@ -6,7 +6,7 @@
   "author": "Piko",
   "entrypoint": "dist/index.html",
   "category": "demo",
-  "accentColor": "#E60012",
+  "accentColor": "#EE410C",
   "releaseNotes": "Initial release",
   "minPikoVersion": "0.1.0"
 }
