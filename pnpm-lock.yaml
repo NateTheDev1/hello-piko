@@ -1,0 +1,27 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    dependencies:
+      '@nrichardsdev/piko-sdk':
+        specifier: ^0.1.0
+        version: 0.1.0
+
+packages:
+
+  '@nrichardsdev/piko-sdk@0.1.0':
+    resolution: {integrity: sha512-aOzNsyVlXGKUEbnapaqPBRgKNTW5JziuU4PHvsAItydweSrpZUz93ceBWPiu/lKErLWK/Xems1esklhXmaekQQ==}
+    peerDependencies:
+      react: '>=18.0.0'
+    peerDependenciesMeta:
+      react:
+        optional: true
+
+snapshots:
+
+  '@nrichardsdev/piko-sdk@0.1.0': {}
