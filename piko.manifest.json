@@ -1,0 +1,10 @@
+{
+  "id": "com.piko.hello",
+  "name": "Hello Piko",
+  "version": "1.0.0",
+  "description": "Example Piko channel app (React + Vite)",
+  "author": "Piko",
+  "entrypoint": "dist/index.html",
+  "category": "demo",
+  "accentColor": "#E60012"
+}
