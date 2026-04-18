@@ -14,11 +14,6 @@ const outPath = join(outDir, `${manifest.id}-v${version}.zip`);
 const output = createWriteStream(outPath);
 const archive = archiver('zip', { zlib: { level: 9 } });
 
-output.on('close', () => {
-  console.log(`\nRelease zip created: releases/${manifest.id}-v${version}.zip (${(archive.pointer() / 1024).toFixed(1)} KB)`);
-});
-
-archive.on('error', (err) => { throw err; });
 archive.pipe(output);
 
 // piko.manifest.json at zip root
@@ -27,4 +22,10 @@ archive.file(join(root, 'piko.manifest.json'), { name: 'piko.manifest.json' });
 // built app files
 archive.directory(join(root, 'dist'), 'dist');
 
-await archive.finalize();
+await new Promise((resolve, reject) => {
+  output.on('close', resolve);
+  archive.on('error', reject);
+  archive.finalize();
+});
+
+console.log(`\nRelease zip created: releases/${manifest.id}-v${version}.zip (${(archive.pointer() / 1024).toFixed(1)} KB)`);
